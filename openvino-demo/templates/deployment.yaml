@@ -2,15 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: openvino-demo
+  label:
+    app: openvino-demo
+    release: {{ .Release.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: openvino-demo
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:
         app: openvino-demo
+        release: {{ .Release.Name }}
     spec:
       hostNetwork: true
       containers:
