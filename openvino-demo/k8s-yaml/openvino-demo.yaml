@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openvino-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openvino-demo
+  template:
+    metadata:
+      labels:
+        app: openvino-demo
+    spec:
+      hostNetwork: true
+      containers:
+      - name: openvino-demo
+        image: openvino-demo:latest
+        imagePullPolicy: IfNotPresent
+        command: ["top","-b"]
