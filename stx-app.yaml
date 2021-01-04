@@ -1,20 +1,20 @@
-appName: stx-openvino-app
+appName: stx-app
 namespace: stx-app
 version: 1.0-1
 chart:
-- name: chart1
+- name: openvino-demo
   path: https://github.com/zhuzhenfan/hello-stx.git
   subpath: ./openvino-demo
   label:
   waitLabelKey: deployment
 chartGroup:
 - name: chartgroup1
-  description: "This is the openvino demo chartgroup"
+  description: "This is the first chartgroup"
   sequenced: true
   chart_group:
-  - chart1
+  - openvino-demo
 manifest:
   name: stx-app-manifest
-  releasePrefix: myprefix
+  releasePrefix: v1
   chart_groups:
   - chartgroup1
