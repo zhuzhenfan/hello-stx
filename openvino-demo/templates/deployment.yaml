@@ -20,6 +20,6 @@ spec:
       hostNetwork: true
       containers:
       - name: openvino-demo
-        image: openvino-demo:latest
+        image: starlingx99/openvino-demo:latest
         imagePullPolicy: IfNotPresent
         command: ["top","-b"]
